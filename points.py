@@ -1,9 +1,9 @@
-from common import common_elements
+import common
 import iomodule as io
 from slide import Slide
 
 def pair_pts(slide_A, slide_B):
-    com = common_elements(slide_A, slide_B)
+    com = common.common_elements(slide_A, slide_B)
     inAnotB = len(slide_A.tags - slide_B.tags)
     inBnotA = len(slide_B.tags - slide_A.tags)
     return min(com, inAnotB, inBnotA)

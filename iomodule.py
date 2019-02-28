@@ -1,6 +1,6 @@
 def parse(line):
     data = line.split(' ')
-    return data[0], data[1], data[2:]
+    return data[0], int(data[1]), data[2:]
 
 
 def read_file(filepath):
@@ -8,5 +8,4 @@ def read_file(filepath):
         number_of_files = int(fp.readline().strip())
         for line in fp:
             yield parse(line.strip())
-
 

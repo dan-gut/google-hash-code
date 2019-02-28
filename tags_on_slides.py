@@ -6,11 +6,11 @@ def get_tags_slides_dict(path_to_file):
     tags_on_slides = {}
     counter = 0
     for item in data_gen:
-        for tag in item[2]:
+        for tag in item[3]:
             if tag in tags_on_slides:
                 tags_on_slides[tag].append(counter)
             else:
-                tags_on_slides[tag] = []
+                tags_on_slides[tag] = [counter]
         counter += 1
     with open('out.txt', 'w') as fout:
         fout.write(str(tags_on_slides))

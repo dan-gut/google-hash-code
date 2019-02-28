@@ -12,9 +12,19 @@ def get_tags_slides_dict(path_to_file):
             else:
                 tags_on_slides[tag] = [counter]
         counter += 1
+
+    out_dict = remove_keys_with_less_than_2_ids(tags_on_slides)
     with open('out.txt', 'w') as fout:
-        fout.write(str(tags_on_slides))
+        fout.write(str(out_dict))
     return tags_on_slides
+
+
+def remove_keys_with_less_than_2_ids(a_dict):
+    out_dict = {}
+    for key in a_dict:
+        if len(a_dict[key]) >= 2:
+            out_dict[key] = a_dict[key]
+    return out_dict
 
 
 if __name__ == '__main__':

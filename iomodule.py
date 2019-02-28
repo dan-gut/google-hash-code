@@ -11,6 +11,8 @@ def read_file(filepath):
             yield parse(line.strip(), i)
 
 
-def save_to_file(slide_list):
-    pass
+def save_to_file(slide_list, output_filename):
+    with open(output_filename, 'w') as fp:
+        fp.writelines([str(x) for x in output_filename])
+
 

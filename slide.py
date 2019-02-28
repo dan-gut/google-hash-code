@@ -1,7 +1,7 @@
 class Slide(object):
     def __init__(self):
         self.photos = []
-        self.tags = []
+        self.tags = set()
 
     def add_photo(self, photo):
         assert len(self.photos) < 2
@@ -9,7 +9,7 @@ class Slide(object):
             assert self.photos[0][1] == 'V'
             assert photo[1] == 'V'
         self.photos.append(photo)
-        self.tags.extend(photo[-1])
+        self.tags.update(photo[-1])
 
     def __str__(self):
         return ' '.join([str(x[0]) for x in self.photos])

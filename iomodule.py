@@ -8,8 +8,8 @@ def read_file(filepath):
         number_of_files = int(fp.readline().strip())
         i = 0
         for line in fp:
-            i += 1
             yield parse(line.strip(), i)
+            i += 1
 
 
 def save_to_file(slide_list, output_filename):

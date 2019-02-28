@@ -12,4 +12,8 @@ class Slide(object):
         self.tags.update(photo[-1])
 
     def __str__(self):
+        if len(self.photos) > 1:
+            assert self.photos[0][1] == 'V' and self.photos[1][1] == 'V'
+        else:
+            assert self.photos[0][1] == 'H'
         return ' '.join([str(x[0]) for x in self.photos])

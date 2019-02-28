@@ -12,4 +12,4 @@ class Slide(object):
         self.tags.extend(photo[-1])
 
     def __str__(self):
-        return ' '.join([x[0] for x in self.photos])
+        return ' '.join([str(x[0]) for x in self.photos])

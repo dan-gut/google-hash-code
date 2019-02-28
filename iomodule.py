@@ -13,6 +13,7 @@ def read_file(filepath):
 
 def save_to_file(slide_list, output_filename):
     with open(output_filename, 'w') as fp:
-        fp.writelines([str(x) for x in output_filename])
+        fp.writelines(str(len(slide_list)))
+        fp.writelines([str(x) for x in slide_list])
 
 

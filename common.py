@@ -17,4 +17,11 @@ def make_slides(photos):
         s = slide.Slide()
         s.add_photo(h)
         slides.append(s)
-    verticals = sorted(verticals, lambda v: len(v[-1]))
+    verticals = sorted(verticals, key=lambda v: len(v[-1]))
+    for i in range(len(verticals)//2):
+        s = slide.Slide()
+        s.add_photo(verticals[i])
+        s.add_photo(verticals[-1-i])
+        slides.append(s)
+    return slides
+

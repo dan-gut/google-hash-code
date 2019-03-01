@@ -2,17 +2,6 @@ import random
 from tags_on_slides import get_tags_slides_dict
 
 
-def exactly_one_fits(item1, item2):
-    if item1[0] in item2 and item1[1] not in item2:
-        item2.remove(item1[0])
-        return item2[0]
-    elif item1[0] not in item2 and item1[1] in item2:
-        item2.remove(item1[1])
-        return item2[0]
-    else:
-        return -1
-
-
 def delete_all_elements_containing(a_dict, id):
     out_dict = {}
     for key in a_dict:
@@ -20,11 +9,7 @@ def delete_all_elements_containing(a_dict, id):
             out_dict[key] = a_dict[key]
     return out_dict
 
-#
 # d = {'a': [1, 4], 'b': [4, 6], 'c': [5, 7]}
-# print(len(d))
-# # print(exactly_one_fits(d['a'], d['b']))
-#
 # new_d = delete_all_elements_containing(d, 1)
 # print(new_d)
 
